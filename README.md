@@ -1,8 +1,4 @@
-Perfect 🚀 You already have a solid README draft! To add **screenshots**, a **link to your live site**, and a **presentation link**, we just need to extend it with a couple of extra sections.
 
-Here’s your updated README with those additions:
-
-```markdown
 # EduShare - Educational Resource Sharing Platform
 
 EduShare is a web-based platform that connects donors with educational organizations in need of resources, creating a powerful network for educational impact worldwide.
@@ -141,16 +137,6 @@ For questions about this project, please contact:
 
 ```
 
----
 
-✅ Next steps for you:
-1. Create a folder called `screenshots/` inside your project.  
-2. Add PNG/JPG screenshots of your site (home page, donation form, etc.).  
-3. Replace the placeholder links (`your-deployed-site-link.com`, `your-presentation-link.com`) with your actual site URL and presentation link.  
-
----
-
-👉 Do you want me to also show you **how to take nice screenshots** (with browser tools or online generators) so they look professional in your README?
-```
 
 
