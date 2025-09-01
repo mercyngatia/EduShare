@@ -5,8 +5,8 @@ EduShare is a web-based platform that connects donors with educational organizat
 
 ## Live Demo
 
-🌐 [Visit EduShare Website](https://your-deployed-site-link.com)  
-📑 [View Project Presentation](https://your-presentation-link.com)
+🌐 [Visit EduShare Website](https://edushare-share.netlify.app/)  
+📑 [View Project Presentation](https://ngatia.my.canva.site/edusharepresentation)
 
 ## Screenshots
 
