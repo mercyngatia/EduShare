@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduShare - Connecting Educational Resources</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <div class="nav-container">
+                <a href="#" class="logo">
+                    <i class="fas fa-book-open"></i>
+                    <span>EduShare</span>
+                </a>
+                
+                <ul class="nav-menu">
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#impact">Impact</a></li>
+                    <li><a href="#stories">Stories</a></li>
+                    <li><a href="#environment">More</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                
+                <div class="auth-buttons">
+                    <a href="#" class="btn btn-outline" id="login-btn">Sign In</a>
+                    <a href="#" class="btn btn-primary" id="register-btn">Get Started</a>
+                </div>
+                
+                <!-- User Menu (shown when logged in) -->
+                <div id="user-menu">
+                    <button id="profile-btn" onclick="toggleDropdown()">
+                        👤 <span id="username">User</span>
+                    </button>
+                    <div id="dropdown">
+                        <button onclick="signOut()">Logout</button>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Community Page (initially hidden) -->
+    <section class="community-page" id="community-page" style="display: none;">
+        <div class="container">
+            <a href="#" class="back-to-impact" onclick="showImpactSection()">
+                <i class="fas fa-arrow-left"></i> Back to Impact Report
+            </a>
+            
+            <div class="section-title">
+                <h2>Our EduShare Community</h2>
+                <p>Discover donors and requesters who are making a difference in education</p>
+            </div>
+            
+            <div class="community-tabs">
+                <button class="community-tab-btn active" data-tab="donors-community">Donors</button>
+                <button class="community-tab-btn" data-tab="requesters-community">Requesters</button>
+            </div>
+            
+            <div class="community-tab-content active" id="donors-community-content">
+                <div class="data-storage-info">
+                    <p><span class="storage-indicator">Data Storage</span> 
+                        <!-- Donor information is stored securely in our local database and is only visible to verified educational organizations seeking resources.</p> -->
+                </div>
+                
+                <div id="communityDonorList" class="community-resource-grid">
+                    <!-- Donor cards will be inserted here -->
+                </div>
+            </div>
+            
+            <div class="community-tab-content" id="requesters-community-content">
+                <div class="data-storage-info">
+                    <p><span class="storage-indicator">Data Storage</span> 
+                        <!-- Requester information is stored securely in our local database and is visible to potential donors who can help fulfill these needs.</p> -->
+                </div>
+                
+                <div id="communityRequesterList" class="community-resource-grid">
+                    <!-- Requester cards will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Share Resources, Transform Lives</h1>
+            <p>EduShare connects generous donors with schools and organizations in need, creating a powerful network of educational impact in communities worldwide.</p>
+            
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary" id="donate-btn">I Want to Donate</a>
+                <a href="#" class="btn btn-secondary" id="request-btn">I Need Resources</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stat-box">
+                    <div class="stat-number">10K+</div>
+                    <div class="stat-text">Resources Shared</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-text">Schools Helped</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">50K+</div>
+                    <div class="stat-text">Students Impacted</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>How EduShare Works</h2>
+                <p>Simple, transparent, and impactful. Join our community in just a few steps.</p>
+            </div>
+            
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="donors">For Donors</button>
+                <button class="tab-btn" data-tab="recipients">For Recipients</button>
+            </div>
+            
+            <div class="tab-content active" id="donors-content">
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Sign Up</h3>
+                        <p>Create your donor profile and tell us about your interests and preferred causes.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>List Resources</h3>
+                        <p>Upload photos and details of educational materials you'd like to donate.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Get Matched</h3>
+                        <p>Our smart algorithm finds schools and organizations that need your resources.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Connect & Donate</h3>
+                        <p>Coordinate directly with recipients for pickup or delivery.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="recipients-content">
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Register & Verify</h3>
+                        <p>Sign up as an educational organization and complete our verification process.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Post Needs</h3>
+                        <p>Create detailed requests for the educational resources your organization needs.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Browse Donations</h3>
+                        <p>Search available donations that match your specific requirements.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Receive & Impact</h3>
+                        <p>Coordinate pickup and share the impact with your generous donors.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="#" class="btn btn-primary" id="get-started-btn">Get Started Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="impact" id="impact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Growing Impact</h2>
+                <p>Transforming Education Together</p>
+            </div>
+            
+            <div class="impact-stats">
+                <div class="impact-stat">
+                    <i class="fas fa-book"></i>
+                    <div class="impact-number">2.5M+</div>
+                    <div class="impact-text">Educational Items Shared</div>
+                </div>
+                
+                <div class="impact-stat">
+                    <i class="fas fa-graduation-cap"></i>
+                    <div class="impact-number">150K+</div>
+                    <div class="impact-text">Students Impacted</div>
+                </div>
+                
+                <div class="impact-stat">
+                    <i class="fas fa-recycle"></i>
+                    <div class="impact-number">85 Tons</div>
+                    <div class="impact-text">Waste Diverted from Landfills</div>
+                </div>
+                
+                <div class="impact-stat">
+                    <i class="fas fa-globe"></i>
+                    <div class="impact-number">45</div>
+                    <div class="impact-text">Countries Served</div>
+                </div>
+            </div>
+
+            <!-- Community Button Container -->
+            <div class="community-button-container">
+                <a href="#" class="btn btn-outline" id="view-community-btn">View Our Community</a>
+            </div>
+
+            <!-- Impact Report Section -->
+            <div class="impact-report">
+                <h3>2024 Impact Report</h3>
+                <p>Our comprehensive impact report demonstrates how EduShare has transformed educational resources sharing across communities worldwide. This report follows established impact reporting frameworks to ensure transparency and accountability.</p>
+                
+                <div class="impact-metrics">
+                    <div class="impact-metric">
+                        <h4>Resources Distributed</h4>
+                        <div class="impact-value">125,482</div>
+                        <p>Books, supplies, and equipment shared</p>
+                    </div>
+                    <div class="impact-metric">
+                        <h4>Schools Supported</h4>
+                        <div class="impact-value">2,417</div>
+                        <p>Educational institutions receiving resources</p>
+                    </div>
+                    <div class="impact-metric">
+                        <h4>Community Impact</h4>
+                        <div class="impact-value">78%</div>
+                        <p>Of recipient schools reported improved educational outcomes</p>
+                    </div>
+                    <div class="impact-metric">
+                        <h4>Carbon Footprint Reduced</h4>
+                        <div class="impact-value">125T</div>
+                        <p>Tons of CO2 saved through resource sharing</p>
+                    </div>
+                </div>
+                
+                <div class="impact-chart">
+                    [Impact Visualization: Resources Distributed Monthly]
+                </div>
+                
+                <h4>Stakeholder Outcomes</h4>
+                <p>Our impact measurement follows the DeCAL methodology (Define, Collect, Analyze, Leverage) to ensure accurate reporting. By comparing pre- and post-intervention data, we can demonstrate the tangible impact of our programs:</p>
+                
+                <ul>
+                    <li>94% of donors report high satisfaction with the donation process</li>
+                    <li>87% of recipients indicate resources received were exactly what they needed</li>
+                    <li>62% reduction in educational resource waste in participating communities</li>
+                </ul>
+                
+                <div class="data-storage-info">
+                    <p><span class="storage-indicator">Data Storage</span> 
+                        <!-- This impact data is securely stored in our local database and is used to improve our services and demonstrate value to stakeholders.</p> -->
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <button class="btn btn-primary" onclick="viewFullImpactReport()">View Full Impact Report</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stories Section -->
+    <section class="stories" id="stories">
+        <div class="container">
+            <div class="section-title">
+                <h2>Stories of Impact</h2>
+                <p>Real experiences from our community of donors and recipients making a difference.</p>
+            </div>
+            
+            <div class="story-cards">
+                <div class="story-card">
+                    <div class="story-img" style="background-image: url('https://placehold.co/600x400/4e73df/white?text=Greenfield+Elementary');"></div>
+                    <div class="story-content">
+                        <h3>Transformed Learning Experience</h3>
+                        <p>"Thanks to EduShare, our rural school received 200 books and tablets that transformed our students' learning experience. The impact has been incredible!"</p>
+                        <div class="story-author">Maria Rodriguez</div>
+                        <div class="story-role">Principal, Greenfield Elementary</div>
+                    </div>
+                </div>
+                
+                <div class="story-card">
+                    <div class="story-img" style="background-image: url('https://placehold.co/600x400/1cc88a/white?text=Tech+Donation');"></div>
+                    <div class="story-content">
+                        <h3>Surplus Laptop Donation</h3>
+                        <p>"I was able to donate my company's surplus laptops through EduShare. Seeing the photos of students using them for coding classes was priceless."</p>
+                        <div class="story-author">David Chen</div>
+                        <div class="story-role">Tech Executive & Donor</div>
+                    </div>
+                </div>
+                
+                <div class="story-card">
+                    <div class="story-img" style="background-image: url('https://placehold.co/600x400/f6c23e/white?text=STEM+Program');"></div>
+                    <div class="story-content">
+                        <h3>STEM Program Resources</h3>
+                        <p>"The platform made it so easy to find exactly what our STEM program needed. We connected with three different donors in our first month!"</p>
+                        <div class="story-author">Sarah Johnson</div>
+                        <div class="story-role">STEM Coordinator, Lincoln High</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Environmental Impact -->
+    <section class="environment" id="environment">
+        <div class="container">
+            <div class="env-content">
+                <div class="env-text">
+                    <h2>Environmental Impact</h2>
+                    <p>By giving educational resources a second life, we're not just helping students learn— we're also protecting our planet. Every donation helps reduce waste and creates a more sustainable educational ecosystem.</p>
+                    <button class="btn btn-primary" onclick="viewFullImpactReport()">View Full Impact Report</button>
+                </div>
+                
+                <div class="env-stats">
+                    <div class="env-stat">
+                        <div class="env-number">85</div>
+                        <div class="env-text">Tons Diverted</div>
+                    </div>
+                    
+                    <div class="env-stat">
+                        <div class="env-number">12K</div>
+                        <div class="env-text">CO2 Reduced (lbs)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Make an Impact?</h2>
+            <p>Whether you're looking to donate or need resources, getting started takes less than 5 minutes.</p>
+            
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-secondary" id="cta-donate-btn">Start Donating</a>
+                <a href="#" class="btn btn-accent" id="cta-request-btn">Request Resources</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="contact" id="contact"> 
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>EduShare</h3>
+                    <p>Connecting generous donors with educational organizations to create lasting impact in communities worldwide.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#impact">Our Impact</a></li>
+                        <li><a href="#stories">Stories</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Get in Touch</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> hello@edushare.org</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> San Francisco, CA</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Stay Updated</h3>
+                    <p>Get the latest impact stories and platform updates delivered to your inbox.</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2024 EduShare. All rights reserved. <a href="#privacy" style="color: #ddd;">Privacy Policy</a> | <a href="#terms" style="color: #ddd;">Terms of Service</a></p>
+                <p>Made with <i class="fas fa-heart" style="color: #e74a3b;"></i> for education</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="section-title">
+                <h2>Log In to Your Account</h2>
+            </div>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-control" placeholder="Enter your password" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Log In</button>
+                
+                <p style="text-align: center; margin-top: 20px;">
+                    Don't have an account? <a href="#" id="switch-to-register" style="color: var(--primary);">Sign Up</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal" id="register-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="section-title">
+                <h2>Create an Account</h2>
+                <p>Join EduShare to make a difference in education</p>
+            </div>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="register-name">Full Name</label>
+                    <input type="text" id="register-name" class="form-control" placeholder="Enter your full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="register-email">Email Address</label>
+                    <input type="email" id="register-email" class="form-control" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="register-password">Password</label>
+                    <input type="password" id="register-password" class="form-control" placeholder="Create a password" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="user-type">I want to:</label>
+                    <select id="user-type" class="form-control" required>
+                        <option value="">Select an option</option>
+                        <option value="donor">Donate Resources</option>
+                        <option value="recipient">Request Resources</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
+                
+                <p style="text-align: center; margin-top: 20px;">
+                    Already have an account? <a href="#" id="switch-to-login" style="color: var(--primary);">Log In</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Donate Modal -->
+    <div class="modal" id="donate-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="section-title">
+                <h2>Donate Resources</h2>
+                <p>List educational resources you'd like to donate</p>
+            </div>
+            <form id="donate-form">
+                <div class="form-group">
+                    <label for="item-name">Item Name</label>
+                    <input type="text" id="item-name" class="form-control" placeholder="e.g., Math textbooks, School uniforms" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="item-type">Item Type</label>
+                    <select id="item-type" class="form-control" required>
+                        <option value="">Select item type</option>
+                        <option value="books">Books</option>
+                        <option value="uniforms">Uniforms</option>
+                        <option value="shoes">Shoes</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="supplies">School Supplies</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="item-quantity">Quantity</label>
+                    <input type="number" id="item-quantity" class="form-control" placeholder="How many items?" min="1" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="item-condition">Condition</label>
+                    <select id="item-condition" class="form-control" required>
+                        <option value="">Select condition</option>
+                        <option value="new">New</option>
+                        <option value="like-new">Like New</option>
+                        <option value="good">Good</option>
+                        <option value="fair">Fair</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="item-location">Location</label>
+                    <input type="text" id="item-location" class="form-control" placeholder="City, State" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="item-description">Description</label>
+                    <textarea id="item-description" class="form-control" placeholder="Describe the items you're donating..." required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="item-image">Upload Image (optional)</label>
+                    <input type="file" id="item-image" class="form-control" accept="image/*">
+                </div>
+
+                <div class="data-storage-info">
+                    <p><span class="storage-indicator">Data Storage</span> 
+                        <!-- Your donation information will be stored securely in our local database and visible to educational organizations seeking resources.</p> -->
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">List Item for Donation</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Request Modal -->
+    <div class="modal" id="request-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="section-title">
+                <h2>Request Resources</h2>
+                <p>Tell us what educational resources you need</p>
+            </div>
+            <form id="request-form">
+                <div class="form-group">
+                    <label for="org-name">Organization Name</label>
+                    <input type="text" id="org-name" class="form-control" placeholder="Enter your organization's name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="org-type">Organization Type</label>
+                    <select id="org-type" class="form-control" required>
+                        <option value="">Select organization type</option>
+                        <option value="school">School</option>
+                        <option value="library">Library</option>
+                        <option value="community-center">Community Center</option>
+                        <option value="nonprofit">Nonprofit Organization</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="resource-type">Resource Type Needed</label>
+                    <select id="resource-type" class="form-control" required>
+                        <option value="">Select resource type</option>
+                        <option value="books">Books</option>
+                        <option value="uniforms">Uniforms</option>
+                        <option value="shoes">Shoes</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="supplies">School Supplies</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="resource-quantity">Quantity Needed</label>
+                    <input type="number" id="resource-quantity" class="form-control" placeholder="How many items do you need?" min="1" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="org-location">Location</label>
+                    <input type="text" id="org-location" class="form-control" placeholder="City, State" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="resource-description">Description of Need</label>
+                    <textarea id="resource-description" class="form-control" placeholder="Describe what resources you need and how they will be used..." required></textarea>
+                </div>
+
+                <div class="data-storage-info">
+                    <p><span class="storage-indicator">Data Storage</span> 
+                        <!-- Your request will be stored in our local database and visible to potential donors who can help fulfill your needs.</p> -->
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Full Impact Report Modal -->
+    <div class="modal" id="full-impact-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal(document.getElementById('full-impact-modal'))">&times;</span>
+            <div class="full-report-content">
+                <h1>EduShare 2024 Impact Report</h1>
+                <p>This report demonstrates the impact of our educational resource sharing platform based on data collected through our system.</p>
+                
+                <h2>Executive Summary</h2>
+                <p>In 2024, EduShare facilitated the connection between donors and educational organizations across 45 countries, impacting over 150,000 students through resource sharing.</p>
+                
+                <h2>Key Metrics</h2>
+                <div class="full-report-metric">
+                    <h3>Resources Distributed: 125,482</h3>
+                    <p>Books, supplies, and equipment shared with educational organizations</p>
+                </div>
+                <div class="full-report-metric">
+                    <h3>Schools Supported: 2,417</h3>
+                    <p>Educational institutions receiving resources through our platform</p>
+                </div>
+                <div class="full-report-metric">
+                    <h3>Community Impact: 78%</h3>
+                    <p>Of recipient schools reported improved educational outcomes</p>
+                </div>
+                <div class="full-report-metric">
+                    <h3>Carbon Footprint Reduced: 125T</h3>
+                    <p>Tons of CO2 saved through resource sharing and waste reduction</p>
+                </div>
+                
+                <h2>Monthly Resource Distribution</h2>
+                <div class="full-report-chart">[Bar chart showing resources distributed by month]</div>
+                
+                <h2>Stakeholder Outcomes</h2>
+                <p>Our impact measurement follows the DeCAL methodology (Define, Collect, Analyze, Leverage) to ensure accurate reporting.</p>
+                <ul>
+                    <li>94% of donors report high satisfaction with the donation process</li>
+                    <li>87% of recipients indicate resources received were exactly what they needed</li>
+                    <li>62% reduction in educational resource waste in participating communities</li>
+                </ul>
+                
+                <h2>Geographical Impact</h2>
+                <div class="full-report-chart">[World map showing impact by region]</div>
+                
+                <h2>Environmental Benefits</h2>
+                <p>By facilitating the reuse of educational resources, EduShare has contributed significantly to environmental sustainability:</p>
+                <ul>
+                    <li>85 tons of educational materials diverted from landfills</li>
+                    <li>12,000 lbs of CO2 emissions avoided</li>
+                    <li>Conserved resources equivalent to 5,000 trees</li>
+                </ul>
+                
+                <h2>Case Studies</h2>
+                <h3>Greenfield Elementary School</h3>
+                <p>After receiving 200 books and 15 tablets through EduShare, Greenfield Elementary saw a 25% improvement in reading test scores and a 40% increase in student engagement in STEM activities.</p>
+                
+                <h3>Community Learning Center</h3>
+                <p>The Community Learning Center in Detroit received art supplies for their after-school program, allowing them to expand from 30 to 75 students and provide a creative outlet for underserved youth.</p>
+                
+                <h2>Future Goals</h2>
+                <p>In 2025, we aim to expand our reach to 60 countries and impact 250,000 students through our platform. We're committed to continuously improving our impact measurement and reporting processes.</p>
+                
+                <div class="full-report-storage-note">
+                    <p><strong>Data Storage:</strong> 
+                        <!-- All impact data is stored securely in our local database and is used to improve our services and demonstrate value to stakeholders. We follow best practices for data management and protection.</p> -->
+                </div>
+                
+                <p style="margin-top: 40px; text-align: center; font-style: italic;">Report generated on ${new Date().toLocaleDateString()} from EduShare impact data</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <span id="notification-text"></span>
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
