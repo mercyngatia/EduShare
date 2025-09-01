@@ -97,11 +97,21 @@ This project is open source and available under the MIT License.
 
 For questions about this project, please contact:
 - Email: hello@edushare.org
+<<<<<<< HEAD
 - Phone: +1 (555) 123-4567
+=======
+- Phone: +1 (555) 123-4567 X 768
+>>>>>>> ee0ec3f6281ab21effd268db8efe2a128f193293
 
 ---
 
 **EduShare** - Share Resources, Transform Lives
 ```
 
+<<<<<<< HEAD
 This README provides a comprehensive overview of your EduShare project, explaining what it does, how to set it up, and how to use it. The structure follows standard README conventions with clear sections for different types of information.
+=======
+This README provides a comprehensive overview of EduShare project, explaining what it does, how to set it up, and how to use it. 
+
+```
+>>>>>>> ee0ec3f6281ab21effd268db8efe2a128f193293
