@@ -26,7 +26,7 @@ EduShare is a web-based platform that connects donors with educational organizat
 ![Donation Form](img/edu_eight.png)
 
 ### Community Directory
-![Community Directory](img/edu-seven.png)
+![Community Directory](img/edu_seven.png)
 
 > 💡 Place your screenshots inside a `screenshots/` folder in your project, then update the paths above.
 
