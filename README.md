@@ -1,8 +1,4 @@
-# EduShare - Educational Resource Sharing Platform
 
-I'll create a comprehensive README file for your EduShare project that explains the purpose, features, and setup instructions.
-
-```markdown
 # EduShare - Educational Resource Sharing Platform
 
 EduShare is a web-based platform that connects donors with educational organizations in need of resources, creating a powerful network for educational impact worldwide.
